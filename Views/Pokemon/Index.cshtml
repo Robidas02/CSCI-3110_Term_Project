@@ -1,0 +1,36 @@
+﻿@model IEnumerable<CSCI_3110_Term_Project.Models.Entities.Pokemon>
+@using CSCI_3110_Term_Project.Models.Entities;
+@using CSCI_3110_Term_Project.Models;
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Type1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Type2)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody id="pokemonTableBody">
+
+    </tbody>
+</table>
+
+@section Scripts {
+    <script type="module" src="~/js/pokemontable.js" defer></script>
+}

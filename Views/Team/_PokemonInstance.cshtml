@@ -1,0 +1,24 @@
+﻿@model CSCI_3110_Term_Project.Models.Entities.PokemonInstance
+
+<tr>
+    <td>
+        @Html.DisplayFor(model => model.Id)
+    </td>
+    <td>
+        @Html.DisplayFor(model => model.PokemonSpecies.Name)
+    </td>
+    <td>
+        @Html.DisplayFor(model => model.Item.Name)
+    </td>
+    <td>
+        @Html.DisplayFor(model => model.Ability.Name)
+    </td>
+    <td>
+        <ul>
+            @foreach(var move in Model.Move)
+            {
+                <li>@move.Name</li>
+            }
+        </ul>
+    </td>
+</tr>
