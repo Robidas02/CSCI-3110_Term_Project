@@ -5,6 +5,9 @@
         @Html.DisplayFor(model => model.Id)
     </td>
     <td>
+        <img width="100" height="100" src="@($"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-viii/icons/{Model.PokemonSpecies.DexNumber}.png")" />
+    </td>
+    <td>
         @Html.DisplayFor(model => model.PokemonSpecies.Name)
     </td>
     <td>
@@ -20,5 +23,9 @@
                 <li>@move.Name</li>
             }
         </ul>
+    </td>
+    <td>
+        <a asp-controller="PokemonInstance" asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+        <a asp-controller="PokemonInstance" asp-action="Delete" asp-route-id="@Model.Id">Delete</a>
     </td>
 </tr>

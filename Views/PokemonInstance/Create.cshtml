@@ -1,0 +1,55 @@
+﻿@model CSCI_3110_Term_Project.Models.Entities.PokemonInstance
+
+@{
+    ViewData["Title"] = "Create a Pokemon";
+}
+
+<h1>Create</h1>
+
+<h4>PokemonInstance</h4>
+<hr />
+<h6>Instructions</h6><br />
+<p>
+    Please select a Pokemon by choosing an option in the dropdown and clicking 'Select this Pokemon'. <br />
+    Then you will be able to see the options for Abilities and Items.<br />
+    Once you've selected everything you want, you may click the 'Create this Pokemon' button to create it.
+</p>
+
+<div class="container">
+    <div class="row">
+        <form id="fullForm" asp-action="Create" asp-controller="PokemonInstance" method="post">
+            <input type="hidden" name="TeamId" id="TeamId" value="@ViewBag.TeamId" />
+            <div class="col-4">
+                <label class="form-label">Pokemon</label>
+                <select name="PokemonSpeciesId" id="dropdownPokemon">
+                </select>
+                <button id="selectPokemon" type="submit">Select this Pokemon</button>
+            </div>
+            <div id="abilitiesAfterSelecton" class="col-4">
+                <label class="form-label">Ability</label>
+                    <select name="AbilityId" id="dropdownAbilities">
+                        <option value="">Select Ability</option>
+                    </select>
+            </div>
+            <div class="col-4">
+                <label class="form-label">Item</label>
+                    <select name="ItemId" id="dropdownItems">
+                        <option value="">Select Item</option>
+                    </select>
+            </div>
+            <button type="submit" class="btn btn-success">Create this Pokémon!</button>
+        </form>
+    </div>
+    <br /><br /><br />
+    <div class="row">
+        <div class="col-3" id="afterSelection">
+        </div>
+    </div>
+    <div class="container" id="pokeDetails">
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script type="module" src="~/js/createinstance.js" defer></script>
+}

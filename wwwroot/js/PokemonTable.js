@@ -1,4 +1,6 @@
-﻿'use strict';
+﻿// This js file creates the Pokemon Index table.
+
+'use strict';
 
 import { PokemonRepository } from './PokemonRepository.js';
 
@@ -11,7 +13,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 
-
+// Populates the table with the data from the database and an image from an external API.
 function populatePokemonTable(pokemon) {
     const tableBody = document.getElementById('pokemonTableBody');
     tableBody.innerHTML = '';
@@ -20,6 +22,14 @@ function populatePokemonTable(pokemon) {
         let tr = document.createElement('tr');
         let td = document.createElement('td');
         td.textContent = mon.id;
+        tr.appendChild(td);
+
+        td = document.createElement('td');
+        let img = document.createElement('img');
+        img.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-viii/icons/${mon.dexNumber}.png`;
+        img.width = 100;
+        img.height = 100;
+        td.appendChild(img);
         tr.appendChild(td);
 
         td = document.createElement('td');
@@ -38,6 +48,7 @@ function populatePokemonTable(pokemon) {
     });
 }
 
+// Converts the number associated with each type to a human-readable string
 function convertTypeNumToName(typeNum) {
     let type = '';
     switch (typeNum) {

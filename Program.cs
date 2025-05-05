@@ -29,6 +29,9 @@ namespace CSCI_3110_Term_Project
             builder.Services.AddControllersWithViews();
             builder.Services.AddScoped<ITeamRepository, TeamRepository>();
             builder.Services.AddScoped<IPokemonRepository, PokemonRepository>();
+            builder.Services.AddScoped<IItemRepository, ItemRepository>();
+            builder.Services.AddScoped<IInstanceRepository, InstanceRepository>();
+
 
             var app = builder.Build();
 

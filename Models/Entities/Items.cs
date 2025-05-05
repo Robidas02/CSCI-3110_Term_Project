@@ -2,6 +2,9 @@
 
 namespace CSCI_3110_Term_Project.Models.Entities
 {
+    /// <summary>
+    /// The Item object holds data on Items. These can be applied to Pokemon Instance objects to create a fully fledged pokemon
+    /// </summary>
     public class Items
     {
         [Key]

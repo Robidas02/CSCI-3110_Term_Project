@@ -1,5 +1,8 @@
 ﻿namespace CSCI_3110_Term_Project.Models
 {
+    /// <summary>
+    /// Stores a property of both the Moves and Pokemon objects.
+    /// </summary>
     public enum Type
     {
         NORMAL, // 0

@@ -1,0 +1,96 @@
+﻿@model CSCI_3110_Term_Project.Models.Entities.PokemonInstance
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>PokemonInstance</h4>
+<hr />
+
+<p>
+    Here you can edit a Pokemon on your team.<br />
+    The grayed out information is not editable, but you can change the Species, Item, and Ability in the same way as on the Create page.<br />
+    You can also add or change the moves your Pokemon knows by selecting them in the dropdown, after choosing a Pokemon, and then clicking the Update this Pokemon button.
+</p>
+
+<div class="container">
+    <div class="row">
+        <form id="fullForm" asp-action="Edit" asp-controller="PokemonInstance" method="post">
+            @* <input type="hidden" name="TeamId" id="TeamId" value="@Model.TeamId" readonly /> *@
+            <div class="form-group col-4">
+                <label asp-for="Id" class="control-label"></label>
+                <input asp-for="Id" class="form-control" readonly />
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+            <div class="form-group col-4">
+                <label asp-for="TeamId" class="control-label"></label>
+                <input asp-for="TeamId" class="form-control" readonly/>
+                <span asp-validation-for="TeamId" class="text-danger"></span>
+            </div>
+            <div class="col-4">
+                <label class="form-label">Pokemon</label>
+                <select name="PokemonSpeciesId" id="dropdownPokemon">
+                </select>
+                <button id="selectPokemon" type="submit">Select this Pokemon</button>
+            </div>
+            <div id="abilitiesAfterSelecton" class="col-4">
+                <label class="form-label">Ability</label>
+                <select name="AbilityId" id="dropdownAbilities">
+                    <option value="">Select Ability</option>
+                </select>
+            </div>
+            <div class="col-4">
+                <label class="form-label">Item</label>
+                <select name="ItemId" id="dropdownItems">
+                    <option value="">Select Item</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-success">Update this Pokémon!</button>
+            <br /><br /><br />
+            <div class="row" id="moveSelection">
+                <div class="col-3">
+                    <label class="form-label">Move 1</label>
+                    <select name="ChosenMoveID" class="moveDropdown">
+                        <option value="@Model.Move">Select a Move</option>
+                    </select>
+                </div>
+                <div class="col-3">
+                    <label class="form-label">Move 2</label>
+                    <select name="ChosenMoveID" class="moveDropdown">
+                        <option value="">Select a Move</option>
+                    </select>
+                </div>
+                <div class="col-3">
+                    <label class="form-label">Move 3</label>
+                    <select name="ChosenMoveID" class="moveDropdown">
+                        <option value="">Select a Move</option>
+                    </select>
+                </div>
+                <div class="col-3">
+                    <label class="form-label">Move 4</label>
+                    <select name="ChosenMoveID" class="moveDropdown">
+                        <option value="">Select a Move</option>
+                    </select>
+                </div>
+            </div>
+        </form>
+    </div>
+    <br />
+    <br />
+    <br />
+    <div class="container" id="pokeDetails">
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script type="module" src="~/js/editinstance.js" defer></script>
+}

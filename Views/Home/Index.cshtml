@@ -3,6 +3,41 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
+    <h1 class="display-4">Welcome to Pokemon Team Builder!</h1>
+    <hr />
+    <br />
+    <br />
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <p>A site where you can create teams of Pokemon and view different items, abilities, and moves.</p>
+                <p>To start building a team, please log in.</p>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-6">
+                <p>Don't have an account? That's fine. Just register an email and create a password and you're good to go!</p>
+                <br />
+                <br />
+                <h3>Login Here</h3>
+                <a class="btn btn-primary" asp-area="Identity" asp-page="/Account/Login">Login</a>
+                <br />
+                <h3>Register Here</h3>
+                <a class="btn btn-primary" asp-area="Identity" asp-page="/Account/Register">Register</a>
+            </div>
+            <div class="col-6">
+                <p>If instead you'd like to just view the options for Pokemon or items, you can freely navigate to those pages using the buttons below or the navigation bar above!</p>
+                <br />
+                <h4>View All Pokemon <a class="btn btn-danger" asp-area="" asp-controller="Pokemon" asp-action="Index">Here</a></h4>
+                <br />
+                <br />
+                <br />
+                <h4>View All Items</h4> <a class="btn btn-warning" asp-controller="Item" asp-action="Index">Here</a>
+            </div>
+        </div>
+    </div>
+    
+    
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>

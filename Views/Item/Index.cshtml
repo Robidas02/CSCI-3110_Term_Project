@@ -1,0 +1,29 @@
+﻿@model IEnumerable<CSCI_3110_Term_Project.Models.Entities.Items>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody id="itemTableBody">
+    </tbody>
+</table>
+@section Scripts{
+    <script type="module" src="~/js/itemtable.js" defer></script>
+}
